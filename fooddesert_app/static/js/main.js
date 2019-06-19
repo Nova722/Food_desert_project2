@@ -74,12 +74,13 @@ function choosePackedBubbles(data, scale) {
 
     btns.on("click", function () {
 
+        d3.selectAll('.d3-tip_bubble').remove();
         var drdnText = d3.select(".bubblebtngr").text();
         chosenText = d3.select(this).text();
 
         if (chosenText != drdnText) {
 
-            d3.selectAll('.d3-tip .n').remove();
+            // d3.selectAll('.d3-tip .n').remove();
 
             d3.select("#bubbles").html("");
 
@@ -348,7 +349,7 @@ function bubblePlotHoverChoice(objs, choice, value) {
     }, 1800);
 
     var toolTip = d3.tip()
-        .attr("class", "d3-tip")
+        .attr("class", "d3-tip_bubble")
         .offset([-10, -95])
         .html(function (d) {
             return (`${d.county}, ${d.state}<br>Low Access: ${d.pla}%<br>${choice}: ${d[value]}<br>County Rank: ${1822 - +d.rank}`);
