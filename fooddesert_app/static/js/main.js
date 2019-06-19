@@ -210,10 +210,6 @@ function bubblePackChoice(countyData, scale, chosenText) {
 function scales(data, topic) {
 
     var scales = {
-        // "poverty": d3.scaleSqrt()
-        //     .domain([d3.min([d3.min(data, d => d.povert_17)]),
-        //     d3.max([d3.max(data, d => d.povert_17)])])
-        //     .range([5, 20]),
         "age": d3.scaleLinear()
             .domain([d3.min([d3.min(Object.values(data), d => +d.age[0])]),
             d3.max([d3.max(Object.values(data), d => +d.age[0])])])
@@ -226,10 +222,6 @@ function scales(data, topic) {
             .domain([d3.min([d3.min(Object.values(data), d => +d.gini[0])]),
             d3.max([d3.max(Object.values(data), d => +d.gini[0])])])
             .range([5, 40]),
-        // "vehicle": d3.scaleSqrt()
-        //     .domain([d3.min([d3.min(Object.values(data), d => d.vehicle[0] / d.pop[0]), d3.min(Object.values(data), d => d.vehicle_16 / d.pop_16), d3.min(Object.values(data), d => d.vehicle[0] / d.pop[0]), d3.min(Object.values(data), d => d.vehicle_14 / d.pop_14)]),
-        //     d3.max([d3.max(Object.values(data), d => d.vehicle[0] / d.pop[0]), d3.max(Object.values(data), d => d.vehicle_16 / d.pop_16), d3.max(Object.values(data), d => d.vehicle[0] / d.pop[0]), d3.max(Object.values(data), d => d.vehicle_14 / d.pop_14)])])
-        //     .range([0, 100]),
         "pop": d3.scaleSqrt()
             .domain([d3.min([d3.min(Object.values(data), d => +d.pop[0])]),
             d3.max([d3.max(Object.values(data), d => +d.pop[0])])])
@@ -262,7 +254,7 @@ function stateHover(objs, data, scale) {
         .offset([90, 65])
         .html(function (d) {
             var formId = +d.id;
-            return (`${data[formId].county}, ${data[formId].state}<br>Low Access: ${(data[formId].low_access / data[formId].pop[0] * 100).toFixed(2)}%`);
+            return (`${data[formId].county}, ${data[formId].state}<br>${(data[formId].low_access / data[formId].pop[0] * 100).toFixed(2)}% Low Food Access`);
         });
 
     objs.call(toolTip);

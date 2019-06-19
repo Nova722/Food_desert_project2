@@ -3,6 +3,7 @@ html {
   position: relative;
   min-height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 body {
   padding-bottom: 80px;
@@ -241,6 +242,7 @@ tbody {
   height: 500px;
   width: 100%;
   margin-left: 8%;
+  display: block;
 }
 
 /* Leaflet Map ---------------------------------------------------- */

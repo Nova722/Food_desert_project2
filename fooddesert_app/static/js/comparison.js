@@ -42,7 +42,8 @@ function createComaprisonPlot(data, label) {
         "Snap Recipients": "snap",
         "Home Value": "home",
         "Per Capita Income": "pcincome",
-        "Household Income": "income"
+        "Household Income": "income",
+        "Density": "pop_den"
     }
 
     // Sets value
