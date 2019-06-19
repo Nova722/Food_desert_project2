@@ -49,37 +49,37 @@ function createComaprisonPlot(data, label) {
     var value = topics[label];
 
     // Sorts data on low access %
-    var data = Object.values(data).sort(function (a, b) { return (b.plow_access[0]) - (a.plow_access[0]); });
+    var data = Object.values(data).sort(function (a, b) { return (+b.plow_access[0]) - (+a.plow_access[0]); });
 
     // Creates arrays of best and worst county keys(or tracts)
-    var topCounties = data.slice(0, 30);
-    var bottomCounties = data.reverse().slice(0, 30);
+    var topCounties = data.slice(0, 31);
+    var bottomCounties = data.reverse().slice(0, 31);
     var best = [], worst = [];
 
     topCounties.forEach(county => {
-        best.push(+county[value][0]);
+        worst.push(+county[value][0]);
     })
     bottomCounties.forEach(county => {
-        worst.push(+county[value][0]);
+        best.push(+county[value][0]);
     })
 
     // Sets data to be used in plotly
     var trace1 = {
         y: best,
         type: 'box',
-        name: 'Bottom 30',
+        name: 'Low % Food Desert',
         marker: {
-            color: '#666666'
+            color: '#cccccc'
         },
-        fillcolor: '#0000ff',
+        fillcolor: '#0000ff'
     };
 
     var trace2 = {
         y: worst,
         type: 'box',
-        name: 'Top 30',
+        name: 'High % Food Desert',
         marker: {
-            color: '#666666'
+            color: '#cccccc'
         },
         fillcolor: '#d4002b',
     };
@@ -92,7 +92,11 @@ function createComaprisonPlot(data, label) {
         autosize: true,
         title: `${label} vs Food Desert %`,
         paper_bgcolor: '#252525',
-        plot_bgcolor: '#252525'
+        plot_bgcolor: '#252525',
+        font: {
+            color: '#999999'
+        }
+
     };
 
     // Plots box plot
@@ -106,8 +110,8 @@ function comparisonTable(data) {
     var data = Object.values(data).sort(function (a, b) { return (b.plow_access[0]) - (a.plow_access[0]); });
 
     // Slices of top and bottom 30 counties
-    var best = data.slice(0, 31);
-    var worst = data.reverse().slice(0, 31);
+    var worst = data.slice(0, 31);
+    var best = data.reverse().slice(0, 31);
 
     // Define container to append table
     var container = d3.select('#two');
@@ -115,7 +119,7 @@ function comparisonTable(data) {
     // Add table using data and d3
     var th = container.append('table').classed('comptable', true).append('div').classed("card", true).classed('border-0', true).classed('comptable', true).append('div').classed("card-body", true).classed('comptable', true);
     th.append('tr')
-        .html('<th class="comptable" style="color: #0000ff">Highest Food Access %</th><th class="comptable" style="color: #d4002b">Lowest Food Access %</th>')
+        .html('<th class="comptable" style="color: #0000ff">Best Food Access %</th><th class="comptable" style="color: #d4002b">Worst Food Access %</th>')
         .style('color', 'white');
 
     th.selectAll('tr')
