@@ -22,7 +22,7 @@ app = Flask(__name__)
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:////c/users/chris/desktop/project_2/fooddesert_app/db.sqlite"
 #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:///db.sqlite3"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('postgres://xudmrwhelejxov:7cb58004353d914c08dd74751b1de30108c54e7efa998fc71923692742a49ac5@ec2-23-21-148-223.compute-1.amazonaws.com:5432/d1d7gnnkgq41us', '') or 'sqlite:///db.sqlite3'
 
 db = SQLAlchemy(app)
 #db.create_all()

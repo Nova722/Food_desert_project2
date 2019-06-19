@@ -55,19 +55,19 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#sizeRelations">Visualize</a>
-                          </li>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#stText">Rank</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="#comparison">Compare</a>
-                            </li>    
-                          <li class="nav-item">
-                              <a class="nav-link" href="#countyFilter">Locate</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#def">Define</a>
-                              </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#comparison">Compare</a>
+                        </li>    
+                        <li class="nav-item">
+                            <a class="nav-link" href="#countyFilter">Locate</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#def">Define</a>
+                        </li>
                       </ul>
                     </div>
                   </nav>
@@ -77,36 +77,21 @@
 <!-- Choropleth Heading -->
           <div class="row info">
             <br>
-            <h3 style="z-index: 100; color: #c9c9c9; text-align: center; width: 100%; margin-left: 10%;">In what counties are
+            <h3  class="titles" style="margin-top: 2%;">In what counties are
               food deserts most prominent?
             </h3>
       
-            <p style="z-index: 100; color: #c9c9c9; width: 100%; margin-left: 10%;">For this project we were concerned with
-              analyzing the lack of access to healthy and fresh food choices in the US.
-              A food desert is an area with a lack of access to a supermarket. For urban areas this means the % of the
-              population which needs to travel
-              a mile or more to a supermarket. For rural areas the distance to the nearest supermarket is 10 miles or more.
-              Our goal was to create a tool for government policy makers as well as retail supermarkets to spot counties: 
-            </p>
-            
-<!-- Choropleth -->
-            <div class="col-lg-9 col-12">
-              <div id="map"></div>
+            <div class="col-lg-6 col-12 introText">
+              <p>For this project we were concerned with
+                analyzing the lack of access to healthy and fresh food choices in the US.
+                A food desert is an area with a lack of access to a supermarket. For urban areas this means the % of the
+                population which needs to travel
+                a mile or more to a supermarket. For rural areas the distance to the nearest supermarket is 10 miles or more.
+                Our goal was to create a tool for government policy makers as well as retail supermarkets to spot counties: 
+              </p>
             </div>
-      
-<!-- Summary -->
-            <div class="col-lg-3 col-4 infoTable order-lg-0 order-1">
-              <h5 id="ctName"></h5>
-              <div id="summary"></div>
-            </div>
-      
-<!-- Scatter Plot -->
-            <div class="col-8 order-lg-1 order-0">
-              <div id="scatter"></div>
-            </div>
-      
-<!-- Scatter Text -->
-            <div class="col-lg-4 col-12 order-lg-2 order-2" id="overText">
+
+            <div class="col-lg-6 col-12 topList">
               <li>They can better serve the communities which need them the most and are already suffering from a lack of
                 supermarkets (i.e. counties with Food Deserts) by opening new locations which are also
                 most likely to generate higher sales due to a current lack of supply of fresh food choices
@@ -125,6 +110,43 @@
                 20,000+, therefore certain counties have already been ruled out from this analysis.
               </p>
             </div>
+
+            
+<!-- Choropleth -->
+            <div class="col-lg-9 col-12">
+              <div id="map"></div>
+            </div>
+      
+<!-- Summary -->
+            <div class="col-lg-3 col-4 infoTable order-lg-0 order-1">
+              <h5 id="ctName"></h5>
+              <div id="summary"></div>
+            </div>
+
+            <div class="row info">
+              <br>
+              <h3  class="titles" style="margin-top: 2%;">What can US Census data tell us about a county?
+              </h3>
+            </div>
+      
+<!-- Scatter Plot -->
+            <div class="col-8 order-lg-1 order-0">
+              <div id="scatter"></div>
+            </div>
+      
+<!-- Scatter Text -->
+            <div class="col-lg-4 col-12 order-lg-2 order-2" id="overText">
+              <br>
+              <p>
+                Click the x & y axis options in order to activate different dimensions from the US Census
+                Are you a supermarket chain looking to cater to your target market? If you are already interested in a 
+                certain county for a new location click the county and the map above and checkout where that county stands 
+                compared to the others when it comes to census data such as population, per capita income etc. Perhaps the 
+                county you are interested in matches your target market - if not no bog deal! Check out another county 
+                above on the map that may be a better fit or you can even click on a dot on the bubble chart to see what 
+                county does meet your target market!
+              </p>
+            </div>
           </div>
       
           <div class="row"></div>
@@ -132,6 +154,7 @@
       
 <!-- Packed Bubble Text -->
           <div class="row">
+            <h3 class="titles">Is there any correlatin between population size and the % of population affected by a food desert?</h3>
             <div class="col-lg-6 col-12 order-lg-3 order-4" id="compText">
               <p>Magenta bubbles represent counties with the highest % of the population affected by a food desert.
                 Blue bubbles represent counties with the lowest % of the population affected by a food desert.
@@ -169,10 +192,10 @@
             <div class="col-md-12 stText" id="stText">
 <!-- Title-->
               <br>
-              <h3 style="text-align: center; margin-top: 5%;">Where does your state fall when it comes to overall food access?
+              <h3  class="titles">Where does your state fall when it comes to overall food access?
               </h3>
               <br>
-              <p> Are you a legislator allocating budget to help fight off food deserts on a federal level? This visualization
+              <p > Are you a legislator allocating budget to help fight off food deserts on a federal level? This visualization
                 can help
                 give you a better idea of how to best allocate that budget by comparing the state's total population,
                 Low Access Total and Low Access %. California would not be the most efficient place to spend this budget as it
@@ -181,7 +204,7 @@
                 highest percentages
                 of people compared to their population with a lack of access to supermarkets.
               </p>
-              <p style="font-size: 12px; ">*Rollover state names to see low food acces to population ratio. Click to see rank.</p>
+              <p style="font-size: 12px; text-align: center; margin-left: 5%;">*Rollover state names to see low food acces to population ratio. Click to see rank.</p>
             </div>
 <!-- State Chart -->
             <div class="col-12" style="top: 10%;" id="st"></div>
@@ -191,6 +214,7 @@
                 <div class="row" >
 <!-- Comparison Text -->
                   <div class="col-12 ">
+                    <h3 class="titles">How to the 30 counties with the top and bottom % of food deserts compare?</h3>
                     <p> Check out the differences between the counties with the highest and lowest % of the population
                       effected by food deserts
                       and their corresponding census data points. some of the most extreme differences can be seen in SNAP
@@ -227,15 +251,14 @@
               <div class="col-12">
               <div class="col-md-12 mapText">
 <!-- Locator Intro -->
-                <h3 style="text-align: center; margin-top: 5%;">Which counties have the most potential for a supermarket
+                <h3  class="titles">Which counties have the most potential for a supermarket
                   retailer?
                 </h3>
                 <br>
 <!-- Description -->
-                <p> Based on a population of at least 10,000 with a percentage of the population
-                  effected by a lack of food access of 49%+ the below locations would be most in need of a new
-                  supermarket location. If you are looking to work with communities with other parameters feel free to
-                  contact us and we can customize something for you!
+                <p style="margin-left: 5%;">Simply click on the variable you would like to define in the filter below to checkout locations of interest. 
+                   You can filter multiple variables at the same time just use the drop down to further specify your search in 
+                   order to define your target market.
                 </p>
               </div>
       
@@ -351,7 +374,7 @@
         
     <div class = "row">
       <div class="col-12">
-        <h3 style="text-align: center; margin-top: 5%;" id="def">Definitions</h3>
+        <h3  class="titles" id="def">Definitions</h3>
       </div>
 <!-- Definitions Table -->
       <div class="col-12" id="def">

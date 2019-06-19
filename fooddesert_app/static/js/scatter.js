@@ -145,7 +145,6 @@ function clickChange(circleGroup, data) {
     // Clears table, county name, resets colors and opacity
     function clearSummary() {
         d3.select('#summary').html("");
-        d3.select('#bar').html("");
         d3.select('#ctName').html("");
         circleGroup.classed('allunselected', true).classed('selected', false).classed('unselected', false);
         d3.selectAll('.counties').style('stroke', 'transparent');
@@ -182,6 +181,9 @@ function clickChange(circleGroup, data) {
             clearSummary();
             circleGroup
                 .classed('allunselected', false).classed('selected', false).classed('unselected', true);
+
+            d3.select('#ctName').html("");
+            d3.select('#summary').html("");
 
             findChosenCounty(tract, data);
             d3.select(this)

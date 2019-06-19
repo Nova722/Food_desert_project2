@@ -25,9 +25,11 @@ function hoverStates(objs, scaleLP, scaleP, mask, data) {
     }).on("click", function () {
         // Defines chosenState
         var chosenState = d3.select(this).nodes()[0];
+        d3.selectAll('.avgSquare').remove();
 
         // Removes existing stats, creates state stats
         d3.selectAll('.spent').remove();
+        d3.selectAll('.statSquare').remove();
         createStats(chosenState.__data__, mask);
 
         // Stops event from propagating to parent element
@@ -179,6 +181,7 @@ function crateAverageValues(data, mask) {
         .style("font-family", "sans-serif")
         .style("font-weight", "bold")
         .text("National")
+        .classed('avgSquare', true)
         .classed('statSquare', true);
 
     // For each object entry, adds national stats to mask
@@ -200,6 +203,7 @@ function crateAverageValues(data, mask) {
             .style("font-weight", "bold")
             .style("font-family", "sans-serif")
             .text(title1)
+            .classed('avgSquare', true)
             .classed('statSquare', true);
 
         // If there is a separate line, adds below, sets value
@@ -215,6 +219,7 @@ function crateAverageValues(data, mask) {
                 .style("font-weight", "bold")
                 .style("font-family", "sans-serif")
                 .text(title2)
+                .classed('avgSquare', true)
                 .classed('statSquare', true);
         }
         // If only one line, sets value
@@ -230,6 +235,7 @@ function crateAverageValues(data, mask) {
             .style("font-weight", "bold")
             .style("font-family", "sans-serif")
             .text(value)
+            .classed('avgSquare', true)
             .classed('statSquare', true);
     })
 }
@@ -387,7 +393,7 @@ function createMainLineH(objs, scaleLP, scaleP, mask) {
         .style('opacity', 0.5)
         .classed('lapline', true)
         .attr('transform', 'translate(0, 500)');
-    // Poplation Line
+    // Population Line
     svg
         .append('path')
         .attr('d', pointsP)
