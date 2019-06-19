@@ -1,0 +1,393 @@
+.aText {
+  font-family: sans-serif;
+  font-size: 16px;
+  text-anchor: middle;
+  color: #c9c9c9;
+}
+h3 {
+  color: #c9c9c9;
+
+}
+.active {
+  font-weight: bold;
+  fill: #c9c9c9;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+.inactive {
+  font-weight: lighter;
+  fill: rgb(65, 64, 64);
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+.inactive:hover {
+  fill: rgb(197, 196, 196);
+  cursor: pointer;
+}
+#ctName {
+  padding: 5;
+  text-align: center;
+}
+#summary {
+  margin-right: 15%;
+  float: right;
+  z-index: 5000;
+  position: absolute;
+}
+#scatter {
+  margin-top: -7%;
+  /* margin-left: 3%; */
+}
+#bar {
+  margin-left: -25%;
+  position: absolute;
+}
+.plot-container .plotly {
+  z-index: 0;
+}
+.stateText {
+  z-index: 100;
+}
+.stateCircle {
+  stroke: #e3e3e3;
+}
+.chart {
+  display: block;
+  margin: 0;
+}
+.selected {
+  fill: #d4002b;
+  opacity: 1;
+  z-index: 1000;
+}
+.unselected {
+  fill: rgb(82, 81, 81);
+  opacity: 0.25;
+}
+.allunselected {
+  fill: #d4002b;
+  opacity: 0.5;
+}
+.stateContainer {
+  background-color: #0000ff;
+  display: block;
+  /* width: 100%; */
+  /* margin-bottom: 3%; */
+  overflow: hidden;
+  /* background-color: #fff; */
+}
+.stateNames {
+  font-size: 1rem;
+  font-family: sans-serif;
+  line-height: 0.5;
+  fill: white;
+}
+table.comptable {
+  margin-left:auto; 
+	margin-right:auto;
+  /* margin-top: ; */
+}
+th.comptable {
+  width: 50%;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  /* padding: 5; */
+  /* margin-left: 5%; */
+}
+td.comptable {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 0.75rem;
+  color: #c9c9c9;
+  line-height: 1.2;
+}
+.card.comptable {
+  width: 100%;
+  height: 500px;
+  /* overflow-y: scroll; */
+}
+.card-body.comptable {
+  padding-top: 0;
+}
+td.sumtable{
+  padding: 5px;
+  font-size: 1rem;
+  line-height: 1;
+  line-height: 1.5em;
+  text-transform: capitalize;
+}
+th.sumtable{
+  padding: 5px;
+  font-size: 1rem;
+  line-height: 1;
+  line-height: 1.5em;
+  text-transform: capitalize;
+}
+/* .selectedCounty {
+  stroke: white;
+}
+.unselectedCounty {
+  stroke: transparent;
+} */
+.bubble {
+  position: absolute;
+  /* top: -5%; */
+  left: -5%;
+}
+.d3-tip {
+  padding: 6px;
+  font-size: 12px;
+  line-height: 1;
+  line-height: 1.5em;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+}
+.first {
+  color: #79d2a6;
+}
+.second {
+  color: rgb(82, 81, 81);
+}
+.modebar{
+  display: none !important;
+}
+#bchart {
+  /* margin-top: 55%;
+  margin-right: -30%;
+  position: absolute; */
+  float: right;
+}
+input {
+  transform: translate(0px, -6px);
+  /* background-color: rgb(158, 157, 157); */
+  background-color: #343332;
+  border: 0;
+  color: #c9c9c9;
+}
+.leaflet-popup-content, .leaflet-popup-content-wrapper {
+  background-color: #c9c9c9;
+}
+.noUi-handle:after, .noUi-handle:before
+{
+  /* background-color: rgb(37, 37, 37); */
+  background-color: #d4002b;
+  height: 8px;
+}
+.noUi-handle {
+  /* background-color: #d4002b; */
+  background-color: rgb(82, 81, 81);
+  border: 0;
+  box-shadow: none !important;
+  height: 18px;
+  top: -1px;
+}
+.noUi-background {
+  /* background-color: rgb(37, 37, 37); */
+  background-color: rgb(29, 29, 29);
+  border: 0;
+  box-shadow: none;
+}
+.noUi-horizontal .noUi-handle {
+  height: 18px;
+  top: -1px;
+}
+.noUi-connect {
+  /* background-color: rgb(82, 81, 81); */
+  border: 0;
+  height: 16px;
+  /* background-color: #d4002b; */
+  background-color: #605f5f;
+}
+.noUi-target .noUi-ltr .noUi-horizontal .noUi-background {
+  /* background-color: rgb(37, 37, 37); */
+  background-color: rgb(29, 29, 29);
+}
+.x-axis path, .y-axis path{
+  stroke: #808080;
+}
+.x-axis text, line, .y-axis text, line{
+  stroke: #808080;
+}
+
+/* th {
+  font-size: 16px;;
+}
+td {
+  font-size: 16px;
+} */
+/* @media (min-width: 1000px){
+  svg .stateContainer {
+    width: 100% !important;
+  }
+ } */
+ /* @media (min-width: 1100px){
+   .stateContainer {
+     width: 90%;
+   }
+ } */
+ #overText {
+   /* margin-top: 5%; */
+   margin-bottom: 5%;
+   width: 95%;
+  /* margin-left: 5%; */
+  /* text-align: justify; */
+  /* width: 75%; */
+}
+#compText {
+  margin-left: 0%;
+  padding-left: 5%;
+  margin-bottom: 15%;
+  margin-top: 5%;
+}
+.resultsbtn {
+  margin-top: -4%;
+  /* color: #d4002b !important; */
+}
+ @media (min-width: 1200px) {
+  /* .stateContainer {
+    width: 73.2%;
+  } */
+}
+@media (max-width: 1000px){
+  #filters .card {
+    margin-top: 0%;
+  }
+  .infoTable  {
+    left: 10%;
+    z-index: 100;
+    /* margin-top: 10%; */
+  }
+  #countyFilter {
+    margin-top: 20%;
+  }
+  #summary {
+    margin-left: 0%;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  p {
+    /* margin-left: 10%; */
+    font-size: 1.5rem;
+  }
+  #bar {
+    margin-left: -45%;
+    float: right;
+  }
+  body {
+    font-size: 1.5rem;
+  }
+  .lgnd {
+    margin-left: 8%;
+  }
+  /* svg  .stateContainer {
+    width: 100% !important;
+  } */
+  .lines {
+    width: 100%;
+  }
+  #comparison {
+    top: 5%;
+  }
+  #st {
+    margin-left: 0%;
+  }
+  #scatter {
+    /* margin-left: 2%; */
+  }
+  .bubble {
+    top: 0%;
+    left: 20%;  
+  }
+  .svg-container {
+margin-left: auto;
+margin-right: auto
+  }
+  #sizeRelations {
+    /* height: 10%;
+    background-color: black; */
+    margin-top: 0%;
+  }
+  /* .bubble {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+  } */
+  #overText {
+    margin-top: 5%;
+    /* margin-bottom: 5%; */
+   margin-left: 10%;
+   /* text-align: justify; */
+   /* width: 75%; */
+ }
+ #compText {
+  margin-left: 5%;
+  margin-bottom: 0%;
+}
+td.comptable {
+  font-size: 16px;
+  /* line-height: 1; */
+}
+.stText {
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+/* #countyFilter {
+} */
+.mapText {
+  margin-left: 6%;
+}
+#leafletmap {
+  margin-left: 6%;
+}
+#filterNumbers {
+  margin-left: 5%;
+}
+.filterTable  {
+  margin-top: 5%;
+}
+#def  {
+  margin-left: 6%;
+}
+}
+@media screen and (max-width: 530px) {
+  .stateText {
+    display: none;
+  }
+  .aText {
+    font-size: 14px;
+  }
+  .article {
+    font-size: 2rem !important;
+  }
+  p {
+    font-size: 2rem !important;
+  }
+  /* th {
+    font-size: 14px;;
+  }
+  td {
+    font-size: 14px;
+  } */
+  h4 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .aText {
+    font-size: 13px;
+  }
+}
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-nav .nav-link {
+
+    text-align: center;
+}
+}
