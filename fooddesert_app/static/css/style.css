@@ -94,7 +94,7 @@ li {
   font-weight: bold;
   position: static;
   float: right;
-  z-index: 5000;
+  z-index: 1000;
 }
 .dropdown-menu.show .bubblebtngr, .dropdown-menu .bubblebtngr {
   text-align: end;
@@ -215,10 +215,6 @@ tbody {
 /* Packed Bubbles ---------------------------------------------------- */
 #bubbles { 
   height: 550px;
-  z-index: 0;
-}
-.pbbtn {
-  margin-top: -5%;
 }
 
 /* Boxplots ---------------------------------------------------- */
@@ -245,7 +241,7 @@ tbody {
   margin-top: 5%;
   height: 500px;
   width: 100%;
-  margin-left: 3%;
+  margin-left: 8%;
   display: block;
 }
 
@@ -326,64 +322,10 @@ input {
   padding: 0;
 }
 
-@media (min-width: 1360px) {
-  #st {
-    margin-left: 8%;
-  }
-  .pbbtn {
-    margin-top: 0%;
-  }
-}
-@media (max-width: 1199px) and (min-width:1001px) {
-  html {
-    overflow-x: visible;
-  }
-  .bubble {
-    margin-left: 25%;
-  }
-  .pbbtn {
-    margin-top: -5%;
-  }
-  #st {
-    margin-left: 1%;
-  }
-  #pop_slider {
-    margin-top: -5%;
-  }
-  #popden_slider {
-    margin-top: -5%;
-  }
-  #pcincome_slider {
-    margin-top: -5%;
-  }
-  #hhincome_slider {
-    margin-top: -5%;
-  }
-  #medage_slider {
-    margin-top: -5%;
-  }
-  #gini_slider {
-    margin-top: -5%;
-  }
-  #pov_slider {
-    margin-top: -5%;
-  }
-  #snap_slider {
-    margin-top: -5%;
-  }
-  #home_slider {
-    margin-top: -5%;
-  }
-  #locator {
-  margin-top: 3%;
-  }
-  #filters .card {
-    margin-top: 0%;
-  }
-}
+
 @media (max-width: 992px) {
   .navbar {
-    width: 100%;
+    width: 115%;
   }
   .navbar-dark .navbar-nav .nav-link {
     float: right;
@@ -391,5 +333,15 @@ input {
   }
   .navbar-expand-lg .navbar-nav .nav-link {
     text-align: center;
+  }
+}
+@media (min-width: 600px) {
+  .article {
+    font-size: 16 px !important;
+  }
+}
+@media (max-width: 600px) {
+  .article {
+    font-size: 20 px !important;
   }
 }
