@@ -121,7 +121,8 @@ function filtering(data) {
         })
     }
     // Displays results total
-    d3.selectAll('.filterResultTotal').selectAll('h5').style('color', '#d4002b');
+    // d3.selectAll('.filterResultTotal').selectAll('h5').style('color', '#d4002b');
+    d3.selectAll('.filterResultTotal').selectAll('h5').style('color', '#0000ff');
     
     // Returns the filtered counties
     return data;
@@ -129,6 +130,10 @@ function filtering(data) {
 
 // Creates map and calls functions for sliders, filtering, markers
 function createMap(data) {
+
+    var scale = d3.scaleSqrt()
+    .domain([0, d3.max(Object.values(data), d => (+d.plow_access[0]))])
+    .range(['#0000ff', '#FF0000']);
 
     // Calls function to create sliders
     makeSliders(data);
@@ -163,7 +168,7 @@ function createMap(data) {
     });
 
     // Creates marker layer for full data at start
-    countyLocations = L.layerGroup(createMarks(data));
+    countyLocations = L.layerGroup(createMarks(data, scale));
     countyLocations.addTo(myMap);
 
     // Calls function to acivate and deactive slider based on dropdown choice
@@ -197,7 +202,7 @@ function createMap(data) {
 
             // Creates new markers and adds to map
             filterTerms();
-            countyLocations = L.layerGroup(createMarks(filtering(data)));
+            countyLocations = L.layerGroup(createMarks(filtering(data), scale));
             countyLocations.addTo(myMap);
             
         });
@@ -205,7 +210,7 @@ function createMap(data) {
 }
 
 // Creates circle markers for counties in filtered data
-function createMarks(data) {
+function createMarks(data, scale) {
 
     var countyMarkers = [];
 
@@ -216,7 +221,8 @@ function createMarks(data) {
                 stroke: false,
                 fillOpacity: 0.5,
                 color: "transparent",
-                fillColor: "#0000ff",
+                fillColor: scale(county.plow_access[0]),
+                // fillColor: "#0000ff",
                 radius: 10,
             }).bindPopup("<h3>" + county.county[0] + ", " + county.state[0] + "</h3> <hr>"
                 + "Low Food Access: " + county.plow_access[0] + " %" + "<br>"
@@ -314,7 +320,6 @@ function filterTerms() {
 // Filter that creates results table
 function filteredResults(data) {
     d3.select('.filterTable').html("");
-    console.log(Object.values(data));
     var table = d3.select('.filterTable').append('table').classed('table table-striped table-dark', true);
 
     table.append('tr')

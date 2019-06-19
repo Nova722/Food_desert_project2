@@ -12,6 +12,17 @@
   background: rgba(0, 0, 0, 0.8);
   border-radius: 4px;
 }
+.d3-tip_bubble {
+  padding: 6px;
+  font-size: 12px;
+  line-height: 1;
+  line-height: 1.5em;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+}
 
 /* Text Classes ---------------------------------------------------- */
 /* Scatter Labels */
@@ -167,9 +178,19 @@ th.sumtable{
 /* Media Change ---------------------------------------------------- */
 @media (max-width: 1000px){
 
+  html {
+    overflow-x: auto;
+  }
+  body {
+    overflow-x: auto;
+  }
+
 /* Text ---------------------------------------------------- */
   .info li {
     margin-left: 10%;
+  }
+  .infoTable {
+    left: 0%;
   }
   .topList {
     margin-top: 3%;
@@ -177,7 +198,8 @@ th.sumtable{
   .titles {
     margin-bottom: 5%;
     margin-top: 2%;
-    margin-left: 5%;
+    margin-left: 2%;
+    width: 95%;
   }
   .introText {
     padding-left: 0%;
@@ -188,8 +210,11 @@ th.sumtable{
   h2 {
     font-size: 2.5rem;
   }
+  h5 {
+    font-size: 1.75rem;
+  }
   p {
-    margin-left: 10%;
+    margin-left: 5%;
     font-size: 1.5rem;
   }
   body {
@@ -234,15 +259,21 @@ th.sumtable{
   /* Packed Bubbles ---------------------------------------------------- */
   .bubble {
     top: 0%;
-    left: 20%;  
+    left: 0%;  
+    margin-left: 20%;
   }
 
   /* State ---------------------------------------------------- */
   .lines {
     width: 100%;
+    overflow-x: visible;
   }
   #st {
-    margin-left: 0%;
+    margin-left: -0.5%;
+    overflow-x: visible;
+  }
+  .stateContainer {
+    overflow-x: visible;
   }
 
   /* Leaflet ---------------------------------------------------- */
@@ -253,7 +284,7 @@ th.sumtable{
     margin-top: 0%;
   }
   #leafletmap {
-    margin-left: 6%;
+    margin-left: 0%;
   }
   #filterNumbers {
     margin-left: 5%;
@@ -262,7 +293,7 @@ th.sumtable{
     margin-top: 5%;
   }
   #def  {
-    margin-left: 6%;
+    margin-left: 0%;
   } 
 }
 
